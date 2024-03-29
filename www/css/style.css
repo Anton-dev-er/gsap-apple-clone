@@ -1,8 +1,8 @@
-* {
-    box-sizing: border-box;
-}
+
 
 h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
     font-weight: 600;
     color: #1d1d1f;
 }
@@ -11,7 +11,14 @@ body {
     font-family: 'SF UI Text', serif;
     padding: 0;
     margin: 0;
+    font-size: 17px;
+    line-height: 1.4705882353;
+    font-weight: 400;
+    background-color: #fff;
+    color: #1d1d1f;
+    font-style: normal;
 }
+
 
 .adv-wrapper:after {
     position: absolute;
@@ -36,7 +43,6 @@ body {
     max-width: 976px;
     margin: 10px auto;
 }
-
 
 /* COMMON */
 .button {
@@ -96,6 +102,12 @@ body {
     line-height: 1.0625;
 }
 
+.typography-feature-body {
+    font-size: 24px;
+    line-height: 1.1666666667;
+    font-weight: 600;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -113,6 +125,59 @@ body {
     max-width: 50%;
 }
 
+.large-10 {
+    flex-basis: 83.3333333333%;
+    max-width: 83.3333333333%;
+}
+
+.stat,
+.stat .stat-content {
+    position: relative;
+    z-index: 1;
+}
+
+.stat {
+    margin: 0 2em 0 0;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 20px;
+    min-width: 5em;
+    color: #1d1d1f;
+}
+
+.stat .stat-content {
+    margin: 1em 0;
+    padding-top: 4px;
+    padding-bottom: 2px;
+}
+
+.stat .stat-caption:first-child {
+    top: auto;
+    bottom: 100%;
+}
+
+.stat-super .stat-caption {
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 400;
+}
+
+.stat-super .stat-value {
+    font-size: 80px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.typography-accent {
+    color: #f56900;
+}
+
+.column {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
 /* END COMMON */
 
 /* NAV */
@@ -218,11 +283,9 @@ body {
     height: 100%;
 }
 
-
 .hero__center {
     margin: 22px 33px 0px 13px;
 }
-
 
 .glass {
     position: relative;
@@ -441,7 +504,6 @@ body {
 /* END DESIGN DISPLAY */
 
 /* DESIGN SCHEMATIC */
-
 .sticky-container {
     height: 100vh;
     position: sticky;
@@ -499,7 +561,6 @@ body {
     height: 55vh
 }
 
-
 .schematic-wrapper {
     width: 100%;
     height: 100%;
@@ -553,6 +614,7 @@ body {
 .schematic-features-wrapper {
     position: relative;
 }
+
 /* PINs */
 .pin-wrapper {
     position: absolute;
@@ -667,6 +729,7 @@ body {
 .pin-microphone .pin-caption {
     width: 250px;
 }
+
 @media only screen and (min-width: 1069px) {
     .pin-side-button .pin-vertical {
         top: -40px;
@@ -687,14 +750,16 @@ body {
 .pin-gps .pin-caption {
     width: 225px;
 }
+
 /* END PIN GPS */
 
 /* PIN dual-speakers */
-.pin-dual-speakers  {
+.pin-dual-speakers {
     height: 205px;
     top: 130px;
     left: 377px;
 }
+
 /* END PIN dual-speakers */
 
 /* PIN action-button */
@@ -707,6 +772,7 @@ body {
 .pin-action-button .pin-caption {
     width: 300px;
 }
+
 /* END PIN action-button */
 
 /* PIN pin-siren */
@@ -715,6 +781,7 @@ body {
     top: 109px;
     right: 311px;
 }
+
 /* END PIN pin-siren */
 
 /* PIN pin-side-button */
@@ -723,6 +790,7 @@ body {
     top: -141px;
     left: 365px;
 }
+
 /* END PIN pin-side-button */
 
 /* PIN pin-depth-gauge */
@@ -732,6 +800,7 @@ body {
     left: auto;
     right: 263px;
 }
+
 /* END PIN pin-depth-gauge */
 
 /* PIN pin-digital-crown */
@@ -740,6 +809,7 @@ body {
     top: 169px;
     right: 408px;
 }
+
 /* END PIN pin-digital-crown */
 
 /* PIN pin-microphone */
@@ -748,8 +818,169 @@ body {
     top: 106px;
     left: 259px;
 }
+
 /* END PIN pin-microphone */
 
 /* END PINs */
-
 /* END DESIGN SCHEMATIC */
+
+
+/* BATTERY LIFE */
+
+.design-battery-life {
+    padding: 175px 0;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+}
+
+.design-battery-life .battery-life-intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design-battery-life .battery-life-stats {
+    display: flex;
+    justify-content: space-between;
+    margin: 90px auto 0;
+}
+
+.design-battery-life .overview-design-design-icon-battery {
+    display: block;
+    width: var(--p-width);
+    height: var(--p-height);
+    --p-width: 57px;
+    --p-height: 57px;
+    position: relative;
+    right: 40px;
+}
+
+.design-battery-life .copy-block-battery-life {
+    max-width: 636px;
+    margin: 0;
+}
+
+.design-battery-life .stat {
+    padding: 30px 0 50px;
+}
+
+.design-battery-life .stat-caption {
+    font-size: 17px;
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.design-battery-life .stat-value {
+    font-size: 80px;
+    line-height: 1.05;
+    font-weight: 700;
+}
+
+/* END BATTERY LIFE */
+
+/* PARENT DESIGN */
+
+.design-chip {
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    padding: 0 0 195px;
+    height: 1080px;
+}
+
+.design-chip .design-sip-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.design-chip .design-sip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.design-chip .chip-content-block {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 1080px;
+}
+
+.design-chip .design-icon-s9 {
+    display: block;
+    width: var(--p-width);
+    height: var(--p-height);
+    --p-width: 53px;
+    --p-height: 53px;
+}
+
+.design-chip .chip-headline {
+    margin-top: 26px;
+    max-width: 603px;
+}
+
+.design-chip .chip-copy,
+.design-chip .chip-headline {
+    color: #f5f5f7;
+}
+
+.parent-design .typography-feature-headline {
+    margin-top: 20px;
+}
+
+.design-chip .chip-copy {
+    margin-top: 23px;
+    max-width: 565px;
+}
+/* END PARENT DESIGN */
+
+
+/* DESIGN GESTURE */
+.design-gestures {
+    padding: 170px 0;
+    overflow: hidden;
+    position: relative;
+    background: #f7f7f7;
+}
+
+.design-gestures .gestures-content {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+
+.design-gestures .watch-group .column {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.design-gestures .watch-group .watch-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.design-gestures .watch-group .below-watch-copy {
+    text-align: left;
+    margin-top: 30px;
+    max-width: 250px;
+}
+
+.design-gestures .watch-group .below-watch-copy {
+    text-align: left;
+    margin-top: 30px;
+    max-width: 250px;
+}
+.design-gestures .watch-group .below-watch-copy .copy-block {
+    margin: 0;
+    font-size: 0;
+}
+
+/* END DESIGN GESTURE */

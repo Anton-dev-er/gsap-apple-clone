@@ -5,15 +5,31 @@ import {CSSRulePlugin} from 'https://cdn.skypack.dev/gsap@3.12.0/CSSRulePlugin'
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(CSSRulePlugin)
 
-const basicScrollAnimation = (cls, toggleActions = "play none none reverse") => {
-  return gsap.from(cls, {
+const basicScrollAnimation = (element, toggleActions = "play none none reverse", delay=0, customY=null) => {
+  if (typeof element === "string") {
+    element = document.querySelector(element)
+  }
+
+  const elementHeight = element.offsetHeight * 1.2
+  let y = 120
+  if (y < elementHeight) {
+    y = elementHeight
+  }
+
+  if (customY) {
+    y = customY
+  }
+
+  console.log(element.classList.value, " :",element.offsetHeight)
+  return gsap.from(element, {
     scrollTrigger: {
-      trigger: cls,
+      trigger: element,
       toggleActions
     },
-    y: 120,
+    y: y,
     opacity: 0,
     duration: 0.6,
+    delay,
     ease: "power1.out"
   })
 }
@@ -168,7 +184,7 @@ const videoAnimation = (start, end) => {
         currentTime: 0
       },
       {
-        currentTime: video.duration
+        currentTime: video.duration || 2
       }
   );
 }
@@ -274,11 +290,9 @@ basicScrollAnimation(".design-tough__item-3")
 basicScrollAnimation(".design-tough__item-4")
 
 const hardwareWrapperAnimation = reversedScrollAnimation(".hardware-wrapper__copy-block")
-
 const designSchematicAnimation = basicScrollAnimation(".schematic__copy-block")
 
 designDisplayAnimation()
-
 designSchematic((clipPath) => {
   const splited = clipPath.split(" ")[2]
   if (splited) {
@@ -296,3 +310,18 @@ designSchematic((clipPath) => {
     }
   }
 })
+
+
+basicScrollAnimation(".battery-life-intro")
+const batteryStats = document.querySelectorAll(".stat.stat-super")
+batteryStats.forEach((element, index) => {
+  basicScrollAnimation(element, "play none none reverse", (index + 1) / 10)
+})
+
+
+basicScrollAnimation(".design-icon-s9")
+basicScrollAnimation(".chip-headline")
+basicScrollAnimation(".chip-copy", "play none none reverse", 0, 200)
+
+
+basicScrollAnimation(".copy-block-gestures")
