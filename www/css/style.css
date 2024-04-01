@@ -108,6 +108,30 @@ body {
     font-weight: 600;
 }
 
+.typography-eyebrow {
+    font-size: 24px;
+    line-height: 1.1666666667;
+    font-weight: 600;
+    letter-spacing: .009em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+[class*=typography-eyebrow]+* {
+    margin-top: 0;
+}
+
+.button-elevated {
+    font-size: 17px;
+    line-height: 1.1764805882;
+    font-weight: 400;
+    border-style: solid;
+    border-width: 1px;
+    min-width: 28px;
+    padding: 11px 21px;
+    --sk-button-margin-horizontal: 18px;
+    --sk-button-margin-vertical: 18px;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -866,6 +890,7 @@ body {
 }
 
 .design-battery-life .stat-caption {
+    display: block;
     font-size: 17px;
     line-height: 1.2;
     font-weight: 500;
@@ -875,6 +900,7 @@ body {
     font-size: 80px;
     line-height: 1.05;
     font-weight: 700;
+    letter-spacing: -5px;
 }
 
 /* END BATTERY LIFE */
@@ -983,4 +1009,71 @@ body {
     font-size: 0;
 }
 
+.copy-block-gestures {
+    margin-top: 0;
+    margin-bottom: 91px;
+}
+
 /* END DESIGN GESTURE */
+
+
+/* CARBON NEUTRAL */
+.design-carbon-neutral {
+    padding-top: 173px;
+    padding-bottom: 175px;
+}
+
+.design-carbon-neutral .carbon-logo {
+    display: block;
+    width: var(--p-width);
+    height: var(--p-height);
+    --p-width: 365px;
+    --p-height: 73px;
+}
+
+.design-carbon-neutral .carbon-logo {
+    position: relative;
+    left: 50%;
+    margin-left: -182.5px;
+}
+
+.design-carbon-neutral .carbon-hw {
+    display: block;
+    width: var(--p-width);
+    height: var(--p-height);
+    --p-width: 771px;
+    --p-height: 506px;
+    margin-block: 57px 78px;
+}
+
+.design-carbon-neutral .carbon-hw {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.typography-carbon-neutral-headline {
+    font-size: 64px;
+    line-height: 1.0625;
+    font-weight: 700;
+    letter-spacing: -0.009em;
+    font-family: SF Pro Display, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+.design-carbon-neutral .carbon-copy {
+    max-width: 338px;
+}
+
+.design-carbon-neutral .carbon-copy {
+    color: #86868b;
+    margin-bottom: 30px;
+}
+
+.design-carbon-neutral .carbon-modal-trigger {
+    background: #00d959;
+    color: #000;
+    border-color: transparent;
+    font-weight: 600;
+}
+
+
+/* END CARBON NEUTRAL */

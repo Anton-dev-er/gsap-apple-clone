@@ -5,7 +5,7 @@ import {CSSRulePlugin} from 'https://cdn.skypack.dev/gsap@3.12.0/CSSRulePlugin'
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(CSSRulePlugin)
 
-const basicScrollAnimation = (element, toggleActions = "play none none reverse", delay=0, customY=null) => {
+const basicScrollAnimation = (element, toggleActions = "play none none reverse", delay=0, customY=null, markers=false) => {
   if (typeof element === "string") {
     element = document.querySelector(element)
   }
@@ -24,7 +24,8 @@ const basicScrollAnimation = (element, toggleActions = "play none none reverse",
   return gsap.from(element, {
     scrollTrigger: {
       trigger: element,
-      toggleActions
+      toggleActions,
+      markers
     },
     y: y,
     opacity: 0,
@@ -315,7 +316,7 @@ designSchematic((clipPath) => {
 basicScrollAnimation(".battery-life-intro")
 const batteryStats = document.querySelectorAll(".stat.stat-super")
 batteryStats.forEach((element, index) => {
-  basicScrollAnimation(element, "play none none reverse", (index + 1) / 10)
+  basicScrollAnimation(element, "play none none reverse", (index + 1) / 10, 180, true)
 })
 
 
