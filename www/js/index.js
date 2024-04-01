@@ -5,7 +5,7 @@ import {CSSRulePlugin} from 'https://cdn.skypack.dev/gsap@3.12.0/CSSRulePlugin'
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(CSSRulePlugin)
 
-const basicScrollAnimation = (element, toggleActions = "play none none reverse", delay=0, customY=null, markers=false) => {
+const basicScrollAnimation = (element, toggleActions = "play none none reverse", delay = 0, customY = null, markers = false) => {
   if (typeof element === "string") {
     element = document.querySelector(element)
   }
@@ -20,7 +20,7 @@ const basicScrollAnimation = (element, toggleActions = "play none none reverse",
     y = customY
   }
 
-  console.log(element.classList.value, " :",element.offsetHeight)
+  console.log(element.classList.value, " :", element.offsetHeight)
   return gsap.from(element, {
     scrollTrigger: {
       trigger: element,
@@ -272,6 +272,25 @@ const designSchematic = (onUpdate) => {
   pinsQueueAnimation(tl, startSecondBlock, headerHeight)
 }
 
+const imageAnimation = (cls, transformFrom, transformTo, trigger, start = "top top") => {
+  gsap.fromTo(cls,
+      {
+        "transform": transformFrom,
+      },
+      {
+        "transform": transformTo,
+        ease: "none",
+        scrollTrigger: {
+          trigger,
+          start: start,
+          toggleActions: "play none none reverse",
+          scrub: true,
+          markers: true
+        },
+      }
+  );
+}
+
 gsap.from(".hero__left", {x: -350, duration: 1.5, delay: .5, opacity: 0, ease: "power1.inOut"});
 gsap.fromTo(".hero__center", {scale: 1.1}, {scale: 1, duration: 1.5, ease: "power1.inOut"});
 gsap.from(".hero__right", {x: 350, duration: 1.5, delay: .5, opacity: 0, ease: "power1.inOut"});
@@ -326,3 +345,26 @@ basicScrollAnimation(".chip-copy", "play none none reverse", 0, 200)
 
 
 basicScrollAnimation(".copy-block-gestures")
+
+
+basicScrollAnimation(".overview-design-logo-carbon-neutral")
+basicScrollAnimation(".overview-design-design-carbon", "play none none reverse", 0, 120)
+
+
+basicScrollAnimation(".design-carbon-neutral-text-1", "play none none reverse", 0, 136)
+basicScrollAnimation(".design-carbon-neutral-text-2", "play none none reverse", 0, 150)
+
+
+imageAnimation(
+    ".overview-endurance-endurance-hero img",
+    "matrix(1.3, 0, 0, 1.3, 0, 0)",
+    "matrix(1.1, 0, 0, 1.1, 0, 0)",
+    ".section-header-image"
+)
+imageAnimation(
+    ".overview-endurance-endurance-hero-float img",
+    "matrix(2.17846, 0, 0, 2.17846, 0, 0)",
+    "matrix(1.67574, 0, 0, 1.67574, 0, -100)",
+    ".hero-float-image",
+    "top bottom"
+)
